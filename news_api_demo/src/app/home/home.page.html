@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      News API
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #pageTop [scrollEvents]="true" (ionScroll)="function($event)">
+  <ion-item>
+    <ion-input [(ngModel)]='topic' placeholder='Add topic..'></ion-input>
+  </ion-item>
+  <ion-button expand='block' class="buttonAlign" (click)='search()' pattern="^[a-zA-z0-9]$">Search</ion-button>
+
+  <ion-card *ngFor='let item of newsData'>
+    <ion-card-header>
+      <img class="newsImage" [src]="item.urlToImage">
+      <h3 class="title">{{item.title}}</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="subTitle">{{item.description}}</p>
+    </ion-card-content>
+    <ion-button class="btn" (click)="nextPage(item)">ReadMore</ion-button>
+  </ion-card>
+  <ion-fab *ngIf="!isShown" vertical="bottom" horizontal="end" slot="fixed" (click)="scrollToTop()">
+    <ion-fab-button class="scrollIcon" color="light" translucent="false">
+      <ion-icon name="arrow-up-outline" color="dark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
