@@ -21,7 +21,7 @@ export class HomePage {
     private loadingCtrl:LoadingController) {}
 
 
-    function(event) {
+    scrollEvent(event) {
       const bottomPosition = event.target.clientHeight + event.detail.scrollTop;
         const screenSize = event.target.clientHeight;
         this.isShown = screenSize - bottomPosition >= -10;

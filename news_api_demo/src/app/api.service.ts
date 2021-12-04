@@ -9,6 +9,5 @@ export class ApiService {
 
   getNews(topic,date){
     return this.http.get('https://newsapi.org/v2/everything?q='+topic+'+&from='+date+'&sortBy=publishedAt&apiKey='+this.apikey);
-
   }
 }

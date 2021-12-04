@@ -1,5 +1,7 @@
 {
   "name": "news_api_demo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

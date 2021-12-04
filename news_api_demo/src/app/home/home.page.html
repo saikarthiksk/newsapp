@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content #pageTop [scrollEvents]="true" (ionScroll)="function($event)">
+<ion-content #pageTop [scrollEvents]="true" (ionScroll)="scrollEvent($event)">
+
   <ion-item>
     <ion-input [(ngModel)]='topic' placeholder='Add topic..'></ion-input>
   </ion-item>
